@@ -78,6 +78,56 @@ export default function Portfolio() {
       featured: true,
     },
   ]
+  const services = [
+    {
+     title: "Full-Stack Web Development",
+     description: "From responsive frontends to robust backends, I build custom websites and web apps using modern technologies like React, Next.js, Laravel, and more.",
+      image: "/services/full-stack.jpg",
+      tags: ["liquid", "javascript", "CSS"],
+      link: "https://filturo.com/",
+      featured: true,
+    },
+    {
+      title: "E-commerce Development",
+      description: "Custom Shopify and WooCommerce stores with optimized checkout, product management, and seamless user experience.",
+      image: "/services/ecommerce.png",
+      tags: ["Wordpress", "Javascript", "PHP", "PayPal"],
+      link: "https://www.jusjenneh.com/",
+      featured: true,
+    },
+    {
+      title: "CMS Integration",
+      description: "WordPress development with custom themes, plugin integration, and content optimization for ease of management.",
+      image: "/services/cms.png",
+      tags: ["Vue.js", "Quasar", "Rich UI", "Cordova"],
+      link: "#",
+      featured: false,
+    },
+    {
+      title: "API Integration & Automation",
+      description: "Connect systems and automate workflows with secure API integrations across third-party platforms.",
+      image: "/services/api.jpg",
+      tags: ["React", "Next.js", "Typescript", "Tailwind"],
+      link: "https://v0-joey-ventulan-portfolio.vercel.app/",
+      featured: true,
+    },
+    {
+      title: "Mobile-Responsive Design",
+      description: "Pixel-perfect, mobile-first UI/UX that performs beautifully on all screen sizes.",
+      image: "/services/mobile.jpg",
+      tags: ["Quasar", "Cordova", "Pinia", "Vue", "Rich UI"],
+      link: "#",
+      featured: false,
+    },
+    {
+      title: "Maintenance & Optimization",
+      description: "Site updates, bug fixes, performance tuning, and SEO best practices to keep your site fast and effective.",
+      image: "/services/maintenance.jpg",
+      tags: ["React", "Typescript", "Next", "Tailwind"],
+      link: "#",
+      featured: true,
+    },
+  ]
 
   const blogPosts = [
     {
@@ -125,8 +175,11 @@ export default function Portfolio() {
               <Link href="#about" className="hover:text-primary transition-all duration-300 hover:scale-105">
                 About
               </Link>
+              <Link href="#services" className="hover:text-primary transition-all duration-300 hover:scale-105">
+                Services              
+              </Link>
               <Link href="#gallery" className="hover:text-primary transition-all duration-300 hover:scale-105">
-                Gallery
+                My Work
               </Link>
               <Link href="#blog" className="hover:text-primary transition-all duration-300 hover:scale-105">
                 Blog
@@ -165,11 +218,18 @@ export default function Portfolio() {
                   About
                 </Link>
                 <Link
+                  href="#services"
+                  className="hover:text-primary transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Services
+                </Link>
+                <Link
                   href="#gallery"
                   className="hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Gallery
+                  My Work
                 </Link>
                 <Link
                   href="#blog"
@@ -310,6 +370,50 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+     {/* Services Section */}
+      <section id="services" className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Services</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+             I offer a range of web and software development services tailored to help businesses and individuals build, scale, and optimize their online presence.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className={`group hover:shadow-2xl transition-all duration-500 hover:scale-105 glass border-0 ${
+                  service.featured ? "glow" : ""
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative overflow-hidden rounded-t-lg">
+                  {/* {service.featured && (
+                    <div className="absolute top-4 left-4 z-10">
+                      <Badge className="bg-primary text-white">Featured</Badge>
+                    </div>
+                  )} */}
+                  <Image
+                    src={service.image || "/placeholder.svg"}
+                    alt={service.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription>{service.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
