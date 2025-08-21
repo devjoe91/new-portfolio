@@ -121,7 +121,7 @@ export default function Portfolio() {
     },
     {
       title: "Maintenance & Optimization",
-      description: "Site updates, bug fixes, performance tuning, and SEO best practices to keep your site fast and effective.",
+      description: "Site updates, bug fixes, and performance tuning best practices to keep your site fast and effective.",
       image: "/services/maintenance.jpg",
       tags: ["React", "Typescript", "Next", "Tailwind"],
       link: "#",
