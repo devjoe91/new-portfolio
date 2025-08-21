@@ -61,13 +61,13 @@ export default function Portfolio() {
       link: "https://v0-joey-ventulan-portfolio.vercel.app/",
       featured: true,
     },
-    {
-      title: "TodoBudget App - Mobile App",
-      description: "A todo and budget app",
-      image: "/todobudget.png",
-      tags: ["Quasar", "Cordova", "Pinia", "Vue", "Rich UI"],
-      link: "#",
-      featured: false,
+     {
+      title: "Employee In-Service System",
+      description: "The Employee In-Service System is a web-based application designed to manage and streamline employee training, evaluations, and development programs within an organization. It allows administrators to schedule in-service sessions, track employee participation, and monitor performance progress in real time.",
+      image: "/eis.png",
+      tags: ["CodeIgniter", "HTML", "CSS", "JS", "jQuery", "Bootstrap", "MySQL", "Tailwind"],
+      link: "https://devjoeservices.42web.io/eis/?i=1",
+      featured: true,
     },
     {
       title: "Church Websites",
@@ -356,13 +356,12 @@ export default function Portfolio() {
                   "CodeIgniter",
                   "PostgreSQL",
                   "MySQL",
-                  "Docker",
                   "Git",
                 ].map((skill, index) => (
                   <Badge
                     key={skill}
                     variant="secondary"
-                    className="hover:scale-110 transition-all duration-300 cursor-pointer glass"
+                    className="hover:scale-110 transition-all duration-300 cursor-pointer glass dark:text-white"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {skill}
